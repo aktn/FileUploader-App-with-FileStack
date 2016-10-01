@@ -1,0 +1,27 @@
+{
+  "name": "flat_sharing_app",
+  "version": "1.0.0",
+  "description": "Flat Sharing App which invloves finding, displaying and filtering along with the use of google map and MEAN Stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aktn/FlatSharingApp-MEAN.git"
+  },
+  "author": "aktn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aktn/FlatSharingApp-MEAN/issues"
+  },
+  "homepage": "https://github.com/aktn/FlatSharingApp-MEAN#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.4.10",
+    "morgan": "^1.6.1",
+    "jsonwebtoken": "^5.4.1",
+    "body-parser": "^1.14.2"
+  }
+}

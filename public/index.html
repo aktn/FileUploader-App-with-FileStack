@@ -1,0 +1,79 @@
+<!doctype html>
+<!-- Declaring for starting Angular Module" -->
+<html class="no-js" ng-app="flatSharingApp">
+<head>
+	<meta charset="utf-8">
+	<title>Flat Sharing App></title>
+
+	<meta name="description" content="Flat Sharing App in MEAN Stack">
+	<!-- Modernizr -->
+    <script src="../bower_components/modernizr/bin/modernizr"></script>
+
+	<!-- Google Map API -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_HERE"></script>
+
+	<!-- JS Source -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="../bower_components/jquery/jquery.js"></script>
+
+	<!--- CSS -->
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<ul class="nav nav-pills pull-right">
+				<li active><a href="">I have a flat</a></li>
+				<li disabled><a href="">I want looking for flat</a></li>
+			</uL>
+			<h4 class="text-muted">Flat Sharing App</h4>
+		</div>
+
+		<div class="row content">
+			<!-- Google map here -->
+			<div class="col-md-7">
+				<div id="map"><img src=""></div>
+			</div>
+			
+			<!-- Side panel -->
+			<div class="panel panel-default">
+				<!-- Panel Title -->
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">Post your Flat Here!</h3>
+				<div>
+
+
+				<!-- Panel body -->
+				<div class="panel-body">
+					<form name="addForm" novalidate>
+						<div class="form-group">
+							<label for="username">User name</label>
+							<input type="text" class="form-control" id="username" placeholder="Username here" ng-model="formData.username" required> 
+						</div>
+						<div class="form-group">
+							<label for="location">Location</label>
+							<input type="text" class="form-control" id="location" placeholder="Location here" ng-model="formData.location" required> 
+						</div>
+						<div class="form-group">
+							<label for="contact">Contact</label>
+							<input type="text" class="form-control" id="email" placeholder="Email here" ng-model="formData.email" required> 
+						</div>
+						<div class="form-group">
+	                        <label for="latitude">Latitude</label>
+	                        <input type="text" class="form-control" id="latitude" value="98.700" ng-model="formData.latitude" readonly>
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="longitude">Longitude</label>
+	                        <input type="text" class="form-control" id="longitude" value="-78.760" ng-model="formData.longitude" readonly>
+	                    </div>
+	                    <!-- use ng-disabled to prevent user from clicking uncomplete form -->
+	                    <button type="submit" class="btn btn-danger btn-block" ng-disabled="addForm.$invalid">Post</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
