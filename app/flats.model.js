@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 //Flat Schema
 var FlatSchema = new Schema({
 	username: {type:String, required: true},
-	location: {type:String, required: true},
+	address: {type:String, required: true},
 	email: {type:String, required:true},
 	location: {type: [Number], required: true},
 	created_at: {type: Date, default: Date.now},

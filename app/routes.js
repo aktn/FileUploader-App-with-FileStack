@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Flat = require(./flats.model.js);
+var Flat = require('./flats.model.js');
 
 module.exports = function(app){
 	app.get('/flats', function(req, res){
