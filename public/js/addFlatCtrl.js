@@ -1,5 +1,5 @@
-var addFlatCtrl = angular.module('addFlatCtrl',['geolocation']);
-addFlatCtrl.controller('addFlatCtrl', function($scope, $http, geolocation){
+var addFlatCtrl = angular.module('addFlatCtrl',['geolocation','geoService']);
+addFlatCtrl.controller('addFlatCtrl', function($scope, $http, geolocation, geoService){
 
 	$scope.formData = {};
 	var coordinate = {};
@@ -29,6 +29,9 @@ addFlatCtrl.controller('addFlatCtrl', function($scope, $http, geolocation){
 				$scope.formData.address = "";
 				$scope.formData.location = "";
 				$scope.formData.email = "";
+
+				// Refresh the map with new data
+                geoService.refresh($scope.formData.latitude, $scope.formData.longitude);
 			})
 			.error(function(data){
 				console.log('Error'+data);
