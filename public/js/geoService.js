@@ -1,5 +1,5 @@
 angular.module('geoService', [])
-    .factory('geoService', function($http){
+    .factory('geoService', function($rootScope, $http){
 
         var googleMapService = {};
 
@@ -125,6 +125,10 @@ var initialize = function(latitude, longitude) {
         // Create a new red bouncing marker and move to it
         lastMarker = marker;
         map.panTo(marker.position);
+
+        googleMapService.clickLat = marker.getPosition().lat();
+        googleMapService.clickLong = marker.getPosition().lng();
+        $rootScope.$broadcast("clicked");
     });
 
 };

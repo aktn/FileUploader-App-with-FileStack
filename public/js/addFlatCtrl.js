@@ -1,5 +1,5 @@
 var addFlatCtrl = angular.module('addFlatCtrl',['geolocation','geoService']);
-addFlatCtrl.controller('addFlatCtrl', function($scope, $http, geolocation, geoService){
+addFlatCtrl.controller('addFlatCtrl', function($scope, $http, geolocation, geoService, $rootScope){
 
 	$scope.formData = {};
 	var coordinate = {};
@@ -9,6 +9,17 @@ addFlatCtrl.controller('addFlatCtrl', function($scope, $http, geolocation, geoSe
 	//setting initial cooridnates
 	$scope.formData.latitude = 30.500;
 	$scope.formData.longitude = -90.500;
+
+	// Getting coordinates when click event is detected
+		$rootScope.$on("clicked", function(){
+
+	    // Run the geoService functions associated with new coordinates
+	    $scope.$apply(function(){
+	        $scope.formData.latitude = parseFloat(geoService.clickLat).toFixed(3);
+	        $scope.formData.longitude = parseFloat(geoService.clickLong).toFixed(3);
+	    });
+	});
+
 
 	//Create Flat with the form data from the user
 	$scope.createFlat = function(){
